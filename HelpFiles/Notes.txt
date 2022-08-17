@@ -1,1 +1,20 @@
 Now the question is, how the compiler is sorting items of same id
+
+--------------------------------------------------------------------------------
+There are few methods in Comparator interface ::
+
+Comparator.comparingInt
+Comparator.comparingLong
+Comparator.comparingDouble
+etc.,
+
+
+--------------------------------------------------------------------------------
+Comparable vs Comparator ::
+
+While using comparable, we have to manipulate the pojo by extending it to Comparable interface and override compareTo method for our custom sorting technique.
+--------------------------------------------------------------------------------
+Is Comparator a function interface, but it has two abstract methods?
+
+Yes, Comparator is a functional interface. The equals is an abstract method overriding one of the public methods of java.lang.Object, this doesn’t count as an abstract method.
+--------------------------------------------------------------------------------
