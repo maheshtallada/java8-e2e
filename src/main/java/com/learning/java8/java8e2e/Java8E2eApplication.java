@@ -20,7 +20,9 @@ public class Java8E2eApplication {
 			      new Employee("Frank", 33, 7000), new Employee("Earl", 43, 10000), 
 			      new Employee("Jessica", 23, 4000), new Employee("Pearl", 33, 6000)};
 		
-		CollectionSort.sortById(Arrays.asList(employees));
+		//CollectionSort.sortById(Arrays.asList(employees));
+		
+		CollectionSort.sortByIdAndThenSalary(Arrays.asList(employees));
 		
 	}
 
