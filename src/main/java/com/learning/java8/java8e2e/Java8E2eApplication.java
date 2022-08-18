@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import sorting.CollectionSort;
 import sorting.Employee;
+import sorting.SortPrimitiveTrdtnlAndLambda;
 
 @SpringBootApplication
 public class Java8E2eApplication {
@@ -22,7 +23,10 @@ public class Java8E2eApplication {
 		
 		//CollectionSort.sortById(Arrays.asList(employees));
 		
-		CollectionSort.sortByIdAndThenSalary(Arrays.asList(employees));
+		//CollectionSort.sortByIdAndThenSalary(Arrays.asList(employees));
+
+		//SortPrimitiveTrdtnlAndLambda.sortTraditional();
+		SortPrimitiveTrdtnlAndLambda.sortLambda();
 		
 	}
 
