@@ -21,7 +21,6 @@ public class SortObjectsTrdtnlAndLambda {
 		
 		//using lambda
 		Collections.sort(employeeV2s, (o1,  o2)-> (int) (o2.getSalary() - o1.getSalary()));
-		
 		System.out.println("Using Lambda");
 		System.out.println(employeeV2s);
 		
@@ -31,6 +30,24 @@ public class SortObjectsTrdtnlAndLambda {
 		employeeV2s
 			.stream()
 			.sorted((o1,  o2)-> (int) (o2.getSalary() - o1.getSalary()))
+			.forEach(System.out::println);
+		
+		
+		// Comparator's comparing
+		// need to explore desc in this way
+		System.out.println("Comparator's comparing");
+		employeeV2s
+			.stream()
+			.sorted(Comparator.comparing(emp -> emp.getSalary()))
+			.forEach(System.out::println);
+		
+		
+		// further optimization using method reference
+		System.out.println("further optimization using method reference");
+		employeeV2s
+			.stream()
+			//.sorted(Comparator.comparing(EmployeeV2::getSalary))
+			.sorted(Comparator.comparing(EmployeeV2::getSalary).reversed())
 			.forEach(System.out::println);
 		
 	}
