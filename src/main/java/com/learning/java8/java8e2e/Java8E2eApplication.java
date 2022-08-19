@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import sorting.CollectionSort;
 import sorting.Employee;
+import sorting.SortMapTrdnlAndLambda;
 import sorting.SortObjectsTrdtnlAndLambda;
 import sorting.SortPrimitiveTrdtnlAndLambda;
 
@@ -29,7 +30,8 @@ public class Java8E2eApplication {
 		//SortPrimitiveTrdtnlAndLambda.sortTraditional();
 		//SortPrimitiveTrdtnlAndLambda.sortLambda();
 		
-		SortObjectsTrdtnlAndLambda.sortStream();
+		//SortObjectsTrdtnlAndLambda.sortStream();
+		SortMapTrdnlAndLambda.sortMapTraditional();
 		
 	}
 
