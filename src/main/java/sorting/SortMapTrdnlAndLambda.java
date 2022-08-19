@@ -33,6 +33,28 @@ public class SortMapTrdnlAndLambda {
 	}
 	
 	public static void sortMapLambda() {
+		Map<String, Integer> map = Database.getMap();
+		List<Entry<String, Integer>> arrayList = new ArrayList<>(map.entrySet());
+		
+		// using lambda
+		System.out.println("Using Lambda");
+		Collections.sort(arrayList, (o1, o2)-> o1.getValue().compareTo(o2.getValue()));
+		
+		// to verify sorting order
+		for(Entry<String, Integer> entry: arrayList) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+		
+		
+		//using stream api
+		System.out.println("Using streams");
+		
+		//asc primitive
+		map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+		System.out.println("*********************************");
+		map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
+		
+		//desc primitive -- can use reversed -- need to explore
 		
 	}
 		
