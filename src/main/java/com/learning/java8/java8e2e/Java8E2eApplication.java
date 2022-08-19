@@ -32,7 +32,8 @@ public class Java8E2eApplication {
 		
 		//SortObjectsTrdtnlAndLambda.sortStream();
 		//SortMapTrdnlAndLambda.sortMapTraditional();
-		SortMapTrdnlAndLambda.sortMapLambda();
+		//SortMapTrdnlAndLambda.sortMapLambda();
+		SortMapTrdnlAndLambda.sortCustomMapLambda();
 		
 	}
 
