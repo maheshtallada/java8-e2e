@@ -1,0 +1,12 @@
+hashCode() Method :: 
+
+public int hashCode()
+This method returns an integer value, which is referred to as the hash code value of an object. Every Object, at the time of creation will be assigned with a unique 32-bit, signed int value. This value is the hash code value of that object.
+
+General contract associated with hashCode() method ::
+
+1. The hashCode() method should return the same integer value for the same object for each calling of this method unless the value stored in the object is modified.
+2. If two objects are equal(according to equals() method) then the hashCode() method should return the same integer value for both the objects.
+
+ .. that is if we override equals, we have to override hashcode.
+3. But, it is not necessary that the hashCode() method will return the distinct result for the objects that are not equal (according to equals() method).

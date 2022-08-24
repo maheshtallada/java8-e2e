@@ -1,0 +1,34 @@
+LinkedHashMap vs HashMap ::
+
+The LinkedHashMap is quite similar to HashMap, with an additional feature of maintaining the order of the inserted element.
+
+HashMap is a powerful data structure in Java used to store the key-pair values. It maps a value by its associated key. It allows us to store the null values and null keys. It is a non-synchronized class of Java collection. Whereas the LinkedHashMap is an alternative to HashMap that has the support of maintaining the order of the elements.
+---------------------------------------------------------------------------------------------------
+Some key points about HashMap are as following:
+
+It contains key-pair values.
+It can not have duplicate keys.
+It may have one null key and multiple null values.
+It is non-synchronized.
+It does not provide a way to maintain the order of elements.
+The default capacity of the Java HashMap class is 16 with a load factor of 0.75.
+
+
+Some key points about the LinkedHashMap are as following:
+
+It stores the values in the key-pair combination.
+It can not have duplicate elements.
+It may have one null key and multiple null values.
+It is non synchronized.
+It provides an easy way to maintain the insertion order
+
+
+https://www.javatpoint.com/linkedhashmap-vs-hashmap-in-java
+---------------------------------------------------------------------------------------------------
+
+Internal working of hash map :
+
+---------------------------------------------------------------------------------------------------
+sorting of maps using Java 8:
+
+---------------------------------------------------------------------------------------------------

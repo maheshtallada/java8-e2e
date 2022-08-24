@@ -3,6 +3,15 @@ Now the question is, how the compiler is sorting items of same id
 --------------------------------------------------------------------------------
 There are few methods in Comparator interface ::
 
+thenComparing(keyExtractor)
+thenComparing(comparator)
+thenComparing(keyExtractor, comparator)
+thenComparingDouble(keyExtractor)
+thenComparingInt(keyExtractor)
+thenComparingLong(keyExtractor)
+
+
+
 Comparator.comparingInt
 Comparator.comparingLong
 Comparator.comparingDouble
