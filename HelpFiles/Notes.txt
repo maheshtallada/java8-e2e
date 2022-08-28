@@ -18,15 +18,19 @@ Comparator.comparingDouble
 etc.,
 
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Comparable vs Comparator ::
 
 While using comparable, we have to manipulate the pojo by extending it to Comparable interface and override compareTo method for our custom sorting technique.
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Is Comparator a function interface, but it has two abstract methods?
 
 Yes, Comparator is a functional interface. The equals is an abstract method overriding one of the public methods of java.lang.Object, this doesn’t count as an abstract method.
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Stream :: 
 https://www.youtube.com/watch?v=-ORgK_JkOa4&list=PLFGoYjJG_fqp52WKlmgF4cV72KS9_9tih
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+java-8-sorting-list-of-objects-on-multiple-fields  ::
+
+https://www.benchresources.net/java-8-sorting-list-of-objects-on-multiple-fields/
+---------------------------------------------------------------------------------------

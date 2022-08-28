@@ -42,7 +42,7 @@ public class SortObjectsTrdtnlAndLambda {
 			.forEach(System.out::println);
 		
 		
-		// further optimization using method reference
+		// further optimization using method reference // desc
 		System.out.println("further optimization using method reference");
 		employeeV2s
 			.stream()
