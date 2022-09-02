@@ -1,4 +1,4 @@
-package com.learning.java8.java8e2e.designPatterns.creational;
+package com.learning.java8.java8e2e.designPatterns.creational.singleton;
 
 public class EagerA {
 	
