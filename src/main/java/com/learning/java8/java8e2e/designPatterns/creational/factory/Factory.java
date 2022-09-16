@@ -10,7 +10,7 @@ public class Factory {
 	 * 		respective type of plan object for the key provided i.e., plan type
 	 * 2. need to have those many plan type classes and 
 	 * 		extend it to the Abstract Plan class. 
-	 * 		his abstract class contain some common method 
+	 * 		this abstract class contain some common method 
 	 * 3. Driver class, here Factory calls the factory class' method and gets the
 	 * 		desired instance by passing the plan type && 
 	 * 		calls the common method in abs class
