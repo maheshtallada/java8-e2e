@@ -1,0 +1,20 @@
+1. How to find the nth highest salary ?
+		
+		Select min(salary) from (Select distinct salary from emp order by salary desc) where rownum < n+1;
+		
+		1. get the distinct sal in desc order.
+		2. < n+1 rownum gives n rows
+		3. finding min in first n rows gives nth highest salary
+2. What is view and why is it used ?
+	Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database. We can create a view by selecting fields from one or more tables present in the database. A View can either have all the rows of a table or specific rows based on certain condition.
+	Views can act as aggregated tables.	
+	A view is created by writing a query with required rows and columns and saving it as a view, so that only required data can be given to respective personnel, without exposing sensitive information.
+	
+3. What is Index
+	Indexes are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index is a pointer to data in a table. An index in a database is very similar to an index in the back of a book.
+	
+	Without indexes, tablescan needs to be done to find the result, which drastically reduces performace.
+	
+	Indexes are created for tables and views
+		
+		Working : It uses a B-Tree for creating table of indexes.
