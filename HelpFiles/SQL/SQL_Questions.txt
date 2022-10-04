@@ -5,6 +5,7 @@
 		1. get the distinct sal in desc order.
 		2. < n+1 rownum gives n rows
 		3. finding min in first n rows gives nth highest salary
+		
 2. What is view and why is it used ?
 	Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database. We can create a view by selecting fields from one or more tables present in the database. A View can either have all the rows of a table or specific rows based on certain condition.
 	Views can act as aggregated tables.	
@@ -17,4 +18,41 @@
 	
 	Indexes are created for tables and views
 		
-		Working : It uses a B-Tree for creating table of indexes.
+	Working : It uses a B-Tree for creating table of indexes.
+	
+4. What is Unique key in SQL ?
+	i.   A unique key is a set of one or more than one column(s) of a table that uniquely identify a record in a database table.
+	ii.  You can say that it is little like primary key but it can accept only one null value and it cannot have duplicate values.
+	iii. The unique key and primary key both provide a guarantee for uniqueness for a column or a set of columns.
+	iv.  There is an automatically defined unique key constraint within a primary key constraint.
+	
+	Ex: (for multiple columns) :
+			CREATE TABLE students  
+			(  
+			S_Id int NOT NULL,  
+			LastName varchar (255) NOT NULL,  
+			FirstName varchar (255),  
+			City varchar (255),  
+			CONSTRAINT uc_studentId UNIQUE (S_Id, LastName)  
+			) 
+		
+		(for single column) : 
+		
+		way1: 
+			
+			CREATE TABLE students  
+			(  
+			S_Id int NOT NULL UNIQUE,  
+			LastName varchar (255) NOT NULL,  
+			FirstName varchar (255),  
+			City varchar (255)  
+			)  
+		way2: 
+			CREATE TABLE students  
+			(  
+			S_Id int NOT NULL,  
+			LastName varchar (255) NOT NULL,  
+			FirstName varchar (255),  
+			City varchar (255),  
+			UNIQUE (S_Id)  
+			)  

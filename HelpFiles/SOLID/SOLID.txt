@@ -1,0 +1,65 @@
+1. The broad goal of the SOLID principles is to reduce dependencies so that engineers change one area of software without impacting others. 
+2. Additionally, they're intended to make designs easier to understand, maintain, and extend.
+3. The SOLID Principle ensures easy access and control to object entities.
+-----------------------------------
+https://medium.com/@javatechie/solid-design-principle-java-ae96a48db97
+-----------------------------------
+
+
+SINGLE RESPONSIBILITY PRINCIPLE ::
+	1. A class should have one, and only one, reason to change.
+	2. You can not only apply it to classes, but also to software components and microservices.
+	3. It makes the software easier to implement and prevents unexpected side-effects of future changes.
+	
+	Probelm :: A Class having multiple methods(responsibilities) needs to be modified when change is needed in any of the method.
+	Solution :: If each method has been moved to a separate class, all other classes remain unchanged.
+	
+OPEN/CLOSED PRINCIPLE :
+	1. Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
+	2. It tells you to write your code so that you will be able to add new functionality without changing the existing code. That prevents situations in which a change to one of your classes also requires you to adapt all depending classes.
+	3. Unfortunately, Bertrand Mayer proposes to use inheritance to achieve this goal:
+	
+	
+	“A class is closed, since it may be compiled, stored in a library, baselined, and used by client classes. But it is also open, since any new class may use it as parent, adding new features. When a descendant class is defined, there is no need to change the original or to disturb its clients.”
+	
+	Scenario :: After initial application is developed, if we need to make any changes, the class needs to be modified. 
+	Problem :: In this case any implementation classes of this interface or any sub classes needs to be modified.
+	Solution :: 
+		We Should not modify the classes, instead we have to make them open for extension. ie., the class/interface should not be made 'final'
+		Use Inheritance to achieve this goal.
+
+LISKOV SUBSTITUTION PRINCIPLE ::  with abstract classes also we can achieve this, but suggested to use interfaces as interfaces are light weight.
+	The principle defines that objects of a superclass shall be replaceable with objects of its subclasses without breaking the application. That requires the objects of your subclasses to behave in the same way as the objects of your superclass. 
+	
+	How to achieve : An overridden method of a subclass needs to accept the same input parameter values as the method of the superclass. That means you can implement less restrictive validation rules, but you are not allowed to enforce stricter ones in your subclass.
+	
+	When Impl class/child isn't able to provide logic for any of the interface's method, then it is not following Liskov Substitution principle.
+	--------------------------------------------------------------------------------------------------------------------------------------------------
+	Ex: we have a 4 methods in 1 interface and we have 4 classes. 2 class are able to impl all 4 methods and 2 other classes are unable to impl one unique method out of 4 methods. 
+	
+	Solution so as to follow Liskov Substitution principle :: keep only those 2 methods, which all the 4 classes can implement.
+	push those 2 other methods to two diff interfaces, making tot interfaces 3. Now Impl classes can decide which 2 interfaces to implement out of 3 interfaces.
+	--------------------------------------------------------------------------------------------------------------------------------------------------
+	
+INTERFACE SEGREGATION PRINCIPLE ::
+	Clients(Impl Classes) should not be forced to depend upon interfaces that they do not use.
+	
+	Similar to the Single Responsibility Principle, the goal of the Interface Segregation Principle is to reduce the side effects and frequency of required changes by splitting the software into multiple, independent parts.
+	
+	It is even similar to Liskov Substitution principle, where we define multiple interfaces without forcing classes to implement single interface and child has no logic for one of the abstract methods in it.
+	
+DEPENDENCY INVERSION PRINCIPLE ::
+	It is based on the Open/Closed Principle and the Liskov Substitution Principle. 
+	
+	Dependency Inversion Principle consists of two parts:
+
+	High-level modules should not depend on low-level modules. Both should depend on abstractions.
+	Abstractions should not depend on details. Details should depend on abstractions.
+	
+	Def from another source::
+	This principle states that we must use abstraction (abstract classes and interface) instead of concrete implementations. High level modules should not depend on the low-level module, but both should depend on the abstraction
+	
+	How to achieve : Use interface reference while defining the object but create an object of resp child class, to avoid tight coupling.
+	Dependency Injection : For whatever the interface reference we are talking about in the above line, we have to use Autowired to create instance. we can use any of below annotation, so that this reference takes particular object based on user choice.
+	@Qualifier  -- hardcode or 
+	@Resource(name="${beanName}")  -- to pass in runtime

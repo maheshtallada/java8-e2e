@@ -1,0 +1,17 @@
+1. Can we write public static void main() in any order ?
+	NO, not in any order, but
+	YES, we can change the order of public static void main() to static public void main() in Java, the compiler doesn't throw any compile-time or runtime error. 
+	In Java, we can declare access modifiers in any order, the method name comes last, the return type comes second to last and then after it's our choice.
+
+2. How to overload and override main method in Java?
+	OVERLOAD : similar to -- public static void main(String[] args)
+	We can pass differen types of arguments as below.
+	
+	public static void main(int args)
+	public static void main(char args)
+	public static void main(Double[] args)
+	
+	Yes, We can overload the main method in java but JVM only calls the original main method, it will never call our overloaded main method.
+	So, to execute overloaded methods of main, we must call them from the original main method.
+	
+	OVERRIDE : 	No, we cannot override main method of java because a static method cannot be overridden.

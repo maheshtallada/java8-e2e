@@ -65,6 +65,13 @@
 				ii. call either of the interface's method using <InterfaceName>.super.<methodName>();
 7. What is final, finally and finalize ?
 	final : keyword -- used on variables if you do not want them to be reassigned.
+		
+		i. How do you prevent 'sub subclassing'/'Iniheritance' in java ?
+			You can prevent a class from being subclassed by using the final keyword in the class's declaration. 
+			Similarly, you can prevent a method from being overridden by subclasses by declaring it as a final method. 
+			An abstract class can only be subclassed; it cannot be instantiated.
+			An abstract class can contain abstract methods—methods that are declared but not implemented. Subclasses then provide the implementations for the abstract methods.
+			
 	finally : block -- used for manual cleanup/close connections(through code) activity
 		-- used in try{} finally{} or try{} catch{} and then finally {}.
 	finalize : method -- when we call System.gc();  this method is called internally by JVM., only if some object is assigned to null.
@@ -174,6 +181,9 @@
 	serialVersionUID :: ??
 	The serialVersionUID attribute is an identifier that is used to serialize/deserialize an object of a Serializable class.
 	
+	How do you make a subclass not serializable in java?
+	There is no direct way to prevent sub-class from serialization in java. One possible way by which a programmer can achieve this is by implementing the writeObject() and readObject() methods in the subclass and needs to throw NotSerializableException from these methods.
+	
 	More on Serialization : https://www.digitalocean.com/community/tutorials/serialization-in-java
 
 20. Transient keyword : variable modifier
@@ -201,6 +211,3 @@
 	
 	Why Marker interfaces :	
 		Marker interface is used as a tag that inform the Java compiler by a message so that it can add some special behavior to the class implementing it.
-	
-	
-	
