@@ -113,7 +113,7 @@
 	
 13. Why is String immutable in Java.
 	
-	In the String constant pool, a String object is likely to have one or many references. If several references point to the same String without even knowing it, it would be bad if one of the references modified that String value. That’s why String objects are immutable.
+	In the String constant pool, a String object is likely to have one or many references. If several references point to the same String without even knowing it, it would be bad if one of the references modifies that String value. That’s why String objects are immutable.
 	
 	https://www.geeksforgeeks.org/java-string-is-immutable-what-exactly-is-the-meaning/#:~:text=In%20the%20String%20constant%20pool,why%20String%20objects%20are%20immutable.
 14. What is String intern method ?

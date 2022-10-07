@@ -1,0 +1,4 @@
+Deep copy/ cloning is the process of creating exactly the independent duplicate objects in the heap memory and manually assigning the values of the second object where values are supposed to be copied is called deep cloning.
+
+
+
