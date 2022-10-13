@@ -56,3 +56,5 @@
 			City varchar (255),  
 			UNIQUE (S_Id)  
 			)  
+5. How do you call Stored procedures in JDBC, similar to PreparedStatement, what is the statment type used here ?
+	

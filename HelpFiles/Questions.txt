@@ -56,9 +56,14 @@
 		
 		
 		Theory : 
-			Earlier in Java7, as only abstract methods are available, there is no problem in a class implementing multiple interfaces. Because, the class will implement it's own logic.
+			Earlier in Java7, as only abstract methods are available, there is no problem in a class implementing multiple interfaces. Because, the class will implement it's own logic. 
 			
-			Now, as Default methods are introduced in Java8 interfaces, a class implementing two interfaces which has same method in both of them, will have ambiguity (Diamond problem). like which implementation to take in implementation class (Child)
+			SPECIAL NOTE: https://www.geeksforgeeks.org/two-interfaces-methods-signature-different-return-types/
+				1. We CANNOT implement two Interfaces having same name but different return type. (that means, Diamond problem is solved with Interfaces only for methods having same name and return type)
+				2. We can have a class implement two interfaces with same name and same return type.
+				3. We can have a class implement two interfaces with same name and same return type with different set of arguments aswell. (Overload)
+			
+			But Now, as Default methods are introduced in Java8 interfaces, a class implementing two interfaces which has same method in both of them, will have ambiguity (Diamond problem). like which implementation to take in implementation class (Child)
 			
 			Solution: The class should override that method and can
 				i.  provide it's own logic

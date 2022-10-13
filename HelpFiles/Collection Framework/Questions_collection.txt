@@ -1,0 +1,8 @@
+1. Is both equals and hashcode mandatory ?
+	when you need to use your object in the hashing based collection, you must override both equals() and hashCode(), otherwise equals() would suffice.
+2. HashMap and HashTable
+	HashMap is non-syncronized and is not thread safe while HashTable is thread safe and is synchronized.
+	HashMap allows one null key and values can be null whereas HashTable doesn't allow null key or value.
+	HashMap is faster than HashTable.
+	HashMap iterator is fail-safe where HashTable iterator is not fail-safe.
+	HashMap extends AbstractMap class where HashTable extends Dictionary class.
