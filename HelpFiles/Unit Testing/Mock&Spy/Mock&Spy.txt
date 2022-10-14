@@ -1,0 +1,4 @@
+If we use @Mock on object, it will mock the actual object and would never call the real method. 
+	-- if we stub the data, it will work accordingly
+	-- if not, it will be null, but it never calls the real method
+when we use @Spy, unless the data is stubbed, always the real method is called.

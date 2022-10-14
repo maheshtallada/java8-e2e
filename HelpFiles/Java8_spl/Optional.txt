@@ -1,1 +1,4 @@
 https://www.baeldung.com/java-optional
+
+1. Why Optional when we can work with null checks
+	-- For this we can explain various usages of Optional, so that it auto explains the reason behind mandating optional inplace of null checks(if-conditions)

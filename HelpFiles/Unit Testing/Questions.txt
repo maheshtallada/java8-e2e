@@ -1,0 +1,53 @@
+1. What are the various annotations used in Mockito
+	Background: 
+		1. @SpringBootTest for test class and @Test on method level
+		2.	If we want to test serviceImpl class which has dependency with daoImpl
+				1. use @Autowired for service and @MockBean on daoImpl OR
+				2. use @InjectMocks on service and @Mock on daoImpl 
+				3. and not only daoImpl, all the object which are autowired in serviceImpl needs to be added in the test class with @Mock/@MockBean ---- and can use when and thenReturn methods to create and pass stubs instead of the actual objects.
+		3. @RunWith(MockitoJUnitRunner.class) -- is used on Test Class to enable Mockito annotations -- @Mock
+		4. @RunWith(SpringRunner.class) -- to use SpringBoot's @MockBean Annotation
+			
+2. 2.1 Why @InjectMocks instead of @Autowired ??
+		@InjectMocks annotation tells to Mockito to inject all mocks (objects annotated by @Mock annotation) into fields of testing object. Mockito uses Reflection for this.
+		
+				Ex: In our test class, we want to test a method of xyzServiceImpl class, now we have to use @InjectMocks on this class & have to use @Mock on any of the dependent object the xyzServiceImpl class uses, say xyzDaoImpl
+				
+				@InjectMocks
+				public XyzServiceImpl xyzServiceImpl;
+				
+				@Mock
+				public XyzDaoImpl xyzDaoImpl;
+				
+			As XyzServiceImpl is Spring component, we can use @Autowired inplace of @InjectMocks also. (Test personally and make sure it's correct.)
+
+		@Autowired annotation tells to Spring framework to inject bean from its IoC container. Spring also uses reflection for this when it is private field injection. You can even use even use @Inject annotation (part of Java EE specification) with the same effect.
+	
+   2.2 Difference between Mockito.mock() && @Mock  && @MockBean ?
+		-- https://www.baeldung.com/java-spring-mockito-mock-mockbean
+	
+3. What are all the methods of Mockito ?
+	https://www.javatpoint.com/methods-of-mockito
+	
+	we'll go with few basic ones here :: (when we are using these methods directly, we have to do static import of methods from Mockito class)
+	
+	1. when().thenReturn()
+	2. when().thenThrow()
+	3. doReturn and thenReturn
+	4. doNothing
+	5. doThrow and thenThrow
+4. What are all the assert methods ?
+	assertEquals
+	assertTrue
+	assertFalse
+	assertThrows
+5. What are various Junit specific annotations like @Before ?
+6. How creating mock objects internally works ?
+	Junit internally uses ReflectionAPI to create the mirror objects
+7. what is reflection api in java & why it is being used ?
+	1. Java Reflection is the process of analyzing and modifying all the capabilities of a class at runtime. Reflection API in Java is used to manipulate class and its members which include fields, methods, constructor, etc. at runtime.
+	2. One advantage of reflection API in Java is, it can manipulate private members of the class too.
+	3. The java.lang.reflect package provides many classes to implement reflection in java.
+	4. Methods of the class, java.lang.Class  is used to gather the complete metadata of a particular class.
+	
+	We can get metadata of Class, variable, method and constructor  -- refer https://www.guru99.com/java-reflection-api.html

@@ -1,0 +1,14 @@
+JUnit is a framework that helps with writing and running unit tests. 
+Mockito (or any other mocking tool) is a framework that we specifically use to efficiently write certain kind of tests.
+
+
+1. Most of the business operations deal with Databases and to achieve proper Code coverage, we need to hit Databases even for testing. 
+2. Here the Mockito comes into picture. The Service calls redirects to Mockito instead of repository layer.
+
+1. for methods which return something -- when(<actualmethod>).thenReturn(<dummydata>)   --- this means returning a stub
+		Stubs are the Objects that act as temporary replacement for a called object and give the same output as that of the actual product.
+2. verify(<the_instance>, times).<method name> -- this will test how many times the class is called.
+
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
