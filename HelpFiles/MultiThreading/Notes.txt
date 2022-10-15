@@ -49,6 +49,8 @@ What is Synchronization ?
 				// all the code here will be synchronised, ie., no parallel execution.
 			}
 		
-		As the method is static, asusual we do not have access to instance variables and methods. So usage of them needs to be changed to 
-3. What is the difference between wait and sleep ?
-4. Explain various types of locks.
+		As the method is static, asusual we do not have access to instance variables and methods. So usage of them needs to be changed too.
+3. How many ways we can create a thread ?
+4. What is the difference between wait and sleep ?
+5. Explain various types of locks.
+6. What is producer consumer problem ?
