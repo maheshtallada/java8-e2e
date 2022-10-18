@@ -21,7 +21,7 @@
 				
 			As XyzServiceImpl is Spring component, we can use @Autowired inplace of @InjectMocks also. (Test personally and make sure it's correct.)
 
-		@Autowired annotation tells to Spring framework to inject bean from its IoC container. Spring also uses reflection for this when it is private field injection. You can even use even use @Inject annotation (part of Java EE specification) with the same effect.
+		@Autowired annotation tells to Spring framework to inject bean from its IoC container. Spring also uses reflection for this when it is private field injection. You can even use @Inject annotation (part of Java EE specification) with the same effect.
 	
    2.2 Difference between Mockito.mock() && @Mock  && @MockBean ?
 		-- https://www.baeldung.com/java-spring-mockito-mock-mockbean

@@ -57,4 +57,14 @@
 			UNIQUE (S_Id)  
 			)  
 5. How do you call Stored procedures in JDBC, similar to PreparedStatement, what is the statment type used here ?
+	CallableStatement
+6. What is the difference between Composite primary key and unique key ?
+	A PRIMARY KEY has a UNIQUE constraint by default. While in some tables, there won't be any columns with a unique value to define a row. In such cases COMPOSITE KEYs are used. In such cases two or more columns are combined together so that this combination is unique
 	
+	The UNIQUE constraint uniquely identifies each record in a database table.Unique key can accept NULL
+	
+	Note that you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+7. What is Unique keyword in SQL and any link with unique key for this ?
+
+	Both are same, unique can be applied on single or group or columns. this is called Unique key.
+	Any no. of unique keys can be present in a table.

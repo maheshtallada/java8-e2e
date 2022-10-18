@@ -1,0 +1,68 @@
+SELECT  EmpId, FullName FROM EmployeeDetails WHERE ManagerId = 986;
+SELECT DISTINCT(Project) FROM EmployeeSalary;
+SELECT COUNT(*) FROM EmployeeSalary WHERE Project = 'P1';
+SELECT Max(Salary), Min(Salary), AVG(Salary) FROM EmployeeSalary;
+SELECT EmpId, Salary FROM EmployeeSalary WHERE Salary BETWEEN 9000 AND 15000;
+SELECT EmpId, City, ManagerId FROM EmployeeDetails WHERE City='Toronto' AND ManagerId='321';
+SELECT EmpId, City, ManagerId FROM EmployeeDetails WHERE City='California' OR ManagerId='321';
+SELECT EmpId FROM EmployeeSalary WHERE NOT Project='P1';     OR  SELECT EmpId FROM EmployeeSalary WHERE Project <> 'P1';
+SELECT EmpId, Salary+Variable as TotalSalary FROM EmployeeSalary;
+SELECT FullName FROM EmployeeDetails WHERE FullName LIKE ‘__hn%’;
+SELECT UPPER(FullName), LOWER(City) FROM EmployeeDetails;
+UPDATE EmployeeDetails SET FullName = LTRIM(RTRIM(FullName));
+SELECT FullName FROM EmployeeDetails WHERE EmpId IN (SELECT EmpId FROM EmployeeSalary WHERE Salary BETWEEN 5000 AND 10000);
+Current Date: 
+SQL Server	-	SELECT getdate();
+MySQL		-	SELECT NOW();
+Oracle		-	SELECT SYSDATE FROM DUAL;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
+SELECT EmpId FROM EmployeeDetails UNION SELECT EmpId FROM EmployeeSalary;
+
+Write an SQL query to fetch common records between two tables.
+SQL Server	-- SELECT * FROM EmployeeSalary INTERSECT SELECT * FROM ManagerSalary;
+MySQL		-- SELECT * FROM EmployeeSalary WHERE EmpId IN (SELECT EmpId from ManagerSalary);
+
+Write an SQL query to fetch records that are present in one table but not in another table.
+SQL Server	--	SELECT * FROM EmployeeSalary MINUS SELECT * FROM ManagerSalary;
+MySQL		--	SELECT EmployeeSalary.* FROM EmployeeSalary LEFT JOIN ManagerSalary USING (EmpId) WHERE ManagerSalary.EmpId IS NULL;
+
+Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
+SELECT EmpId FROM  EmployeeDetails where EmpId IN (SELECT EmpId FROM EmployeeSalary);
+
+Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
+SELECT EmpId FROM EmployeeDetails where EmpId Not IN (SELECT EmpId FROM EmployeeSalary);
+
+Write an SQL query to fetch the employee full names and replace the space with ‘-’
+SELECT REPLACE(FullName, ' ', '-') FROM EmployeeDetails;
+
+Write an SQL query to fetch the position of a given character(s) in a field
+SELECT INSTR(FullName, 'Snow') FROM EmployeeDetails;
+
+Write an SQL query to display both the EmpId and ManagerId together.
+SELECT CONCAT(EmpId, ManagerId) as NewId FROM EmployeeDetails;
+
+Write an SQL query to fetch project-wise count of employees sorted by project’s count in descending order.
+Ans. For project-wise count, we will be using the GROUP BY clause and for sorting, we will use the ORDER BY clause on the alias of the project-count.
+SELECT Project, count(EmpId) EmpProjectCount FROM EmployeeSalary GROUP BY Project ORDER BY EmpProjectCount DESC;
+
+Write a query to fetch employee names and salary records. Display the employee details even if the salary record is not present for the employee.
+SELECT E.FullName, S.Salary FROM EmployeeDetails E LEFT JOIN EmployeeSalary S ON E.EmpId = S.EmpId;
+
+Write an SQL query to create a new table with data and structure copied from another table.
+CREATE TABLE NewTable SELECT * FROM EmployeeSalary;
+
+Write an SQL query to create an empty table with the same structure as some other table.
+Here, we can use the same query as above with False ‘WHERE’ condition-
+CREATE TABLE NewTable SELECT * FROM EmployeeSalary where 1=0;
+
+Write an SQL query to fetch top n records
+SQLServer -- SELECT TOP N * FROM EmployeeSalary ORDER BY Salary DESC;
+
+SQL Query to Print the Name and Salary of the Person Having Least Salary in the Department
+SELECT EMPLOYEE_NAME,DEPARTMENT_NAME, SALARY FROM COMPANY WHERE SALARY IN (SELECT MIN(SALARY) FROM COMPANY GROUP BY DEPARTMENT_NAME);
+
+SQL Query to Find the Highest Salary of Each Department
+SELECT DEPT_ID, MAX(SALARY) FROM department GROUP BY DEPT_ID;
+

@@ -1,0 +1,17 @@
+Searching without Indexes:
+	Sequential: (Table scan)
+		when we search for a value, it scans all the values until the value matches to required value.
+		Obviously, this will have performance issues.
+	Solution : B-Tree Structure
+	
+B-Tree: (Index Scan)
+	1. It has 
+		Root nodes,
+		Non-leaf nodes ,
+		leaf nodes
+	2. refer picture.
+	3. let's say we are searcing for 50, 
+		3.1	It will compare 30 and 50 and eliminates all values under 30	--	Root Node
+		3.2	Now it will compare 40, 50 	and eliminates 40 and below			--	Non-Leaf nodes
+		3.3 Now it will compare all the values from 41-50 and concludes equalit at 50	--	Leaf nodes
+		

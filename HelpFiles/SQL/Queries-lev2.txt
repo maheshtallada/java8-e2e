@@ -1,0 +1,116 @@
+Write a query to fetch only the first name(string before space) from the FullName column of the EmployeeDetails table.
+
+Ans. In this question, we are required to first fetch the location of the space character in the FullName field and then extract the first name out of the FullName field.
+
+For finding the location we will use the LOCATE method in MySQL and CHARINDEX in SQL SERVER and for fetching the string before space, we will use the SUBSTRING OR MID method.
+
+MySQL – using MID
+
+SELECT MID(FullName, 1, LOCATE(' ',FullName)) 
+FROM EmployeeDetails;
+
+SQL Server – using SUBSTRING
+
+SELECT SUBSTRING(FullName, 1, CHARINDEX(' ',FullName)) 
+FROM EmployeeDetails;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to find the count of the total occurrences of a particular character – ‘n’ in the FullName field.
+Ans. Here, we can use the ‘Length’ function. We can subtract the total length of the FullName field with a length of the FullName after replacing the character – ‘n’.
+
+SELECT FullName, 
+LENGTH(FullName) - LENGTH(REPLACE(FullName, 'n', ''))
+FROM EmployeeDetails;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to fetch all employee records from EmployeeDetails table who have a salary record in EmployeeSalary table
+SELECT * FROM EmployeeDetails E
+WHERE EXISTS
+(SELECT * FROM EmployeeSalary S 
+WHERE  E.EmpId = S.EmpId);
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to fetch duplicate records from EmployeeDetails (without considering the primary key – EmpId).
+Ans. In order to find duplicate records from the table, we can use GROUP BY on all the fields and then use the HAVING clause to return only those fields whose count is greater than 1 i.e. the rows having duplicate records.
+
+SELECT FullName, ManagerId, DateOfJoining, City, COUNT(*)
+FROM EmployeeDetails
+GROUP BY FullName, ManagerId, DateOfJoining, City
+HAVING COUNT(*) > 1;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to remove duplicates from a table without using a temporary table.
+Ans. Here, we can use delete with alias and inner join. We will check for the equality of all the matching records and them remove the row with higher EmpId.
+
+DELETE E1 FROM EmployeeDetails E1
+INNER JOIN EmployeeDetails E2 
+WHERE E1.EmpId > E2.EmpId 
+AND E1.FullName = E2.FullName 
+AND E1.ManagerId = E2.ManagerId
+AND E1.DateOfJoining = E2.DateOfJoining
+AND E1.City = E2.City;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to fetch only odd rows from the table.
+Ans. In case we have an auto-increment field e.g. EmpId then we can simply use the below query-
+
+SELECT * FROM EmployeeDetails 
+WHERE MOD (EmpId, 2) <> 0;
+
+In case we don’t have such a field then we can use the below query.
+
+Using Row_number in SQL server and checking that the remainder when divided by 2 is 1
+
+SELECT E.EmpId, E.Project, E.Salary
+FROM (
+    SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
+    FROM EmployeeSalary
+) E
+WHERE E.RowNumber % 2 = 1;  // use %2=0 for even rows
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write an SQL query to find the nth highest salary from table.
+
+SELECT TOP 1 Salary
+FROM (
+      SELECT DISTINCT TOP N Salary
+      FROM Employee
+      ORDER BY Salary DESC
+      )
+ORDER BY Salary ASC;
+----------------------------------------------------------------------------------------------------------------------------------
+Write SQL query to find the Nth highest salary from a table without using the TOP/limit keyword.
+
+Correlated subquery :: manakartham kaadh le kani, will go for next
+
+SELECT Salary
+FROM EmployeeSalary Emp1
+WHERE N-1 = (
+                SELECT COUNT( DISTINCT ( Emp2.Salary ) )
+                FROM EmployeeSalary Emp2
+                WHERE Emp2.Salary > Emp1.Salary
+            )
+			
+
+Method 2: 
+
+Select min(salary) from
+(Select distinct salary from Employee order by salary desc)
+where rownum < n+1;
+
+using LIMIT:
+
+Select Salary from table_name order by Salary DESC limit n-1,1;
+(limit has 2 components, first one is to remove those no. of rows from top, second is to display those no. of rows from top)
+----------------------------------------------------------------------------------------------------------------------------------
+Displaying Department Name Having Highest Average Salary in SQL Server
+
+SELECT TOP 1 DEPARTMENT_NAME, AVG(SALARY) AS MAX_AVG_SALARY
+FROM COMPANY
+GROUP BY DEPARTMENT_NAME
+ORDER BY AVG(SALARY) DESC;
+----------------------------------------------------------------------------------------------------------------------------------
+SQL Query to display nth record from the Employee table
+
+SELECT * FROM <table_name> LIMIT  N-1,1;
+Here N refers to the row which is to be retrieved.
+
+SELECT * FROM Employee 
+ORDER BY <column_name>     --column name is the name according to which the rows are to be ordered.Here it's ID.
+OFFSET 5 ROWS              --since N - 1 = 6 - 1 = 5 
+FETCH NEXT 1 ROWS ONLY;
+----------------------------------------------------------------------------------------------------------------------------------

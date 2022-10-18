@@ -58,7 +58,8 @@
 		Theory : 
 			Earlier in Java7, as only abstract methods are available, there is no problem in a class implementing multiple interfaces. Because, the class will implement it's own logic. 
 			
-			SPECIAL NOTE: https://www.geeksforgeeks.org/two-interfaces-methods-signature-different-return-types/
+			SPECIAL NOTE: https://www.geeksforgeeks.org/two-interfaces-methods-signature-different-return-types/	
+				refer :: HelpFiles\CoreJava\MultipleInheritance.java
 				1. We CANNOT implement two Interfaces having same name but different return type. (that means, Diamond problem is solved with Interfaces only for methods having same name and return type)
 				2. We can have a class implement two interfaces with same name and same return type.
 				3. We can have a class implement two interfaces with same name and same return type with different set of arguments aswell. (Overload)
