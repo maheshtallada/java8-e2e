@@ -20,6 +20,3 @@
 	https://www.geeksforgeeks.org/why-java-interfaces-cannot-have-constructor-but-abstract-classes-can-have/?ref=rp
 4. Why a Constructor can not be final, static or abstract in Java?
 	https://www.geeksforgeeks.org/why-a-constructor-can-not-be-final-static-or-abstract-in-java/?ref=rp
-	
-	
-	

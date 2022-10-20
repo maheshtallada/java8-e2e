@@ -1,4 +1,4 @@
-package random;
+package test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,15 +19,6 @@ public class HashMapExample {
 		emp1.setName("Rajesh");
 		
 		System.out.println(empmap.get(emp1));
-		
-		/*
-		This will return null, as the hashcode of the emp1 object changed after adding it to the hashMap,
-		while fetching it will search for the new hashcode, whereas it is stored with the different hashcode initially
-		no object is stored with the new hashcode and hence null is returned.
-		
-		
-		To prevent this, we have to use Immutable classes for keys of HashMap.
-		*/
 
 	}
 
