@@ -4,14 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Factory {
+public class FactoryDriver {
 	/* 
 	 * 1. PlanFactory, as name indicates provides/returns the 
 	 * 		respective type of plan object for the key provided i.e., plan type
 	 * 2. need to have those many plan type classes and 
-	 * 		EXTEND it to the ********************ABSTRACT Plan CLASS******************* 
+	 * 		EXTEND them to the ********************ABSTRACT Plan CLASS******************* 
 	 * 		this abstract class contain some common method 
-	 * 3. Driver class, here Factory calls the factory class' method and gets the
+	 * 3. Driver class, here FactoryDriver calls the PlanFactory class' method and gets the
 	 * 		desired instance by passing the plan type && 
 	 * 		calls the common method in abs class
 	 * */
