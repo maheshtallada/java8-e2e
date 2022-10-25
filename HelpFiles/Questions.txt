@@ -7,13 +7,13 @@
 	Encapsulation: All attributes should be private and the set/get methods should be public. (Constructor usage is not involved in encapsulation)
 	Inheritance: To re-use all the characteristics of Parent. We can use Interface/Class for this. we use implements/extends 
 	respectively.   
-			Ex: In serice and Dao, mostly use have interfaces and their implementation classes.
+			Ex: In service and DAO, mostly use have interfaces and their implementation classes.
 				Parent Class reference can hold child class object.
 	Polymorphism: Single(poly) method can have multiple (morph) implementations 
 				-- Overloading (Static -- compile time): same method name with different no. of arguments. Here also, implementation will be different, but definitely the no./type of arguments should be different
 				-- Over-riding (Dynamic -- run time) : method signature should be same, but different implementation in Parent and Child.
 						1. If the return type in interface method is of parent type, then you can return either parent/child type in implementation method.
-		Dynamic polymorphism: In DAO, we need service class, but we won't inject serviceImpl class, instead wee inject service interface. this is called run-time/dynamic polymorphism.
+		Dynamic polymorphism: In DAO, we need service class, but we won't inject serviceImpl class, instead we inject service interface. this is called run-time/dynamic polymorphism.
 	Abstraction: Hiding the implementation to the end-user, displaying only the method name to them.
 		1. Abstraction can be achieved with either abstract classes or interfaces.	
 		2. Abstract classes should be used primarily for objects that are closely related, whereas interfaces are best suited for providing a common functionality to unrelated classes
@@ -22,19 +22,19 @@
 	If parent's method is throwing exception, its optional for child to throw or not.
 	But if child is throwing exception, definitely parent needs to throw the exception
 4. Parent - Child override scenario
-	1. let's say a method is available in both parent and child. -- in the driver class, the method exxecuted will be based on whose instance we created. (Parent ref can hold child instance but vice-versa is not possible)
+	1. let's say a method is available in both parent and child. -- in the driver class, the method executed will be based on whose instance we created. (Parent ref can hold child instance but vice-versa is not possible)
 	2. Let's say the method is available only in parent, we didn't override in child. But we create child obj with parent ref, the method executed will be of parent without any comiplation error, that's where the inheritance concept lies. if the child has that property or behaviour, the driver uses it or else it takes from parent.
 	
 5. Can we over-ride static and private method ?
 	Ans: ************************NO*********************** -- as simple as that, both static and private are kindof personal things.
-		1. As private method visibility itself is confined to that particular class, we cannot override it.
-		2. for static -- the compilation error we get is -- "Method does not override methos from its superclass".
+		1. As private method's visibility itself is confined to that particular class, we cannot override it.
+		2. For static -- the compilation error we get is -- "Method does not override methos from its superclass".
 			However, the child class can have a static method with same name as the static method from parent. only when we provide @override, the error comes.
 6. What is the difference of Java7 and Java8 interface ?
 	Java 7 -- we can only define abstract classes in interface.
-	Java 8 -- along with abstract (which only has definition), we can have default and static methods also, which have implementation 
+	Java 8 -- along with abstract (which only has definition), we can have default and static methods also, which have implementation.
 		purpose of default : 
-				1. is to not mandate implementation classes to override it. they'll have flexibility to override or not.
+				1. is not to mandate implementation classes to override it. they'll have flexibility to override or not.
 				2. This will be helpful to add new method into interface, as all implementation classes need not implement it mandatorily like earlier in Java7. kind of Virtual extension, as the name of Default/Virtual Extension Method contains.
 		purpose of static : Utility methods can be made static. this is BETTER ALTERNATIVE to UTIL classes. 
 			Class is costly compared to interface. Basically, interfaces let the compiler know the expected behavior of the object.
@@ -46,7 +46,7 @@
 			till Java7, as there are only abstract methods in Interface, it is optional. However its still optional in Java8 and above aswell. Because abstract methods won't have implementation, it can be differentiated from default and static methods of interface easily.
 	6.2 : Any Change in interface variables before and after Java8 ?
 		Ans : ***********NO**********. 
-			before adn after Java 8, all the variables are by default, PUBLIC STATIC and FINAL.
+			before and after Java 8, all the variables are by default, PUBLIC STATIC and FINAL.
 	6.3 : Can we declare private methods in Interface in Java8 ?
 		Ans : ***********NO**********. 
 			It is available from Java 9 onwards.
@@ -168,7 +168,7 @@
 		Now, this happens because when you execute a JAVA program, the JVM needs to know the sequence of execution i.e. needs to have a driver code, and what to execute. Any method that is non-static hasn't been allocated memory by default, on compilation. If no memory has been allocated to the method, in the eyes of the JVM, it doesn't exist, despite the compilation. And when the JVM searches for the 'main' function to execute, it isn't able to find it. This is why you'll get such an error. 
 18. What do you understand by Object Cloning and how do you achieve it in Java?
 			
-	we can clone using clone() method, using == operator jsut assigns a reference, not the actual object.
+	we can clone using clone() method, whereas using == operator just assigns a reference, not the actual object.
 	
 	parent needs to implements Cloneable and override the clone method.
 	Child/Driver needs to extend and then clone can be called on the objects of child to create copies.
