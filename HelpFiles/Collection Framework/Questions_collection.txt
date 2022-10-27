@@ -20,3 +20,5 @@
 	An immutable class is good for caching purposes because you don’t have to worry about the value changes. 
 	Another benefit of immutable class is that it is inherently thread-safe, so you don’t have to worry about thread safety in case of multi-threaded environment.
 6. What is the output of the problem (sysout stmnt) in HashMapExample.java ? -- null
+7. What is the Difference Between Collection.stream().forEach() and Collection.forEach()	??
+	https://www.baeldung.com/java-collection-stream-foreach
