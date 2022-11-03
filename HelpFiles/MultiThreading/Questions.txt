@@ -54,3 +54,7 @@ What is Synchronization ?
 4. What is the difference between wait and sleep ?
 5. Explain various types of locks.
 6. What is producer consumer problem ?
+7. How to prioritize the Queue ?
+8. What is ExecutorService ?
+9. What is CompletableFuture ?
+10. What is Callable Interface? 

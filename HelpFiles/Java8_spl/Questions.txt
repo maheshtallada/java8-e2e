@@ -1,0 +1,2 @@
+1. What are Intermediate and terminal operations in Stream API ?
+2. Why Streams, when we can work with Collections ? -- Benefits of Stream API.

@@ -51,3 +51,10 @@
 	WAP to find the first repeated char in a string
 	
 	Sol: find in package com.learning.java8.java8e2e.newFeatures
+11. What is FailFast and FailSafe ?
+12. Reverse a string using default methods and custom code ?
+	Default: StringBuffer sb = new StringBuffer("DesiredString");
+				sb.reverse();
+13. What is the difference between append method of StringBuffer and concat method of String class ?
+14. Will a Java Program gets executed without main method ?
+15. What is the difference between Collection ForEach and Stream ForEach?

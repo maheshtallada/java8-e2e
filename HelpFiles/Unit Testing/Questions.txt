@@ -51,3 +51,16 @@
 	4. Methods of the class, java.lang.Class  is used to gather the complete metadata of a particular class.
 	
 	We can get metadata of Class, variable, method and constructor  -- refer https://www.guru99.com/java-reflection-api.html
+
+8. How can we test RestAPIs ? 
+
+	Sample : 
+		mockMvc.perform(MockMvcRequestBuilders.post("/users")
+          .content(user)
+          .contentType(MediaType.APPLICATION_JSON_UTF8))
+          .andExpect(MockMvcResultMatchers.status().isOk())
+          .andExpect(MockMvcResultMatchers.content()
+            .contentType(textPlainUtf8));
+	
+	Go through more on this.
+	

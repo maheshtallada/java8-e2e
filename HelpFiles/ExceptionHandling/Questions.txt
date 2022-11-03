@@ -13,3 +13,5 @@
 										-> Other Exceptions
 							  ->   Error
 
+7. When we use multi catch block with Exception as the first one is valid or not ? (any compile time exception ?)
+8. Why the "Exception" block catches all the other Exceptions?
