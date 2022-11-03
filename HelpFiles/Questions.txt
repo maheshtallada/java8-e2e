@@ -72,8 +72,9 @@
 7. What is final, finally and finalize ?
 	final : keyword -- used on variables if you do not want them to be reassigned.
 		
-		i. How do you prevent 'sub subclassing'/'Iniheritance' in java ?
+		i. How do you prevent 'sub subclassing'/'Iniheritance' in java ?-- #immutable #custom
 			You can prevent a class from being subclassed by using the final keyword in the class's declaration. 
+			
 			Similarly, you can prevent a method from being overridden by subclasses by declaring it as a final method. 
 			An abstract class can only be subclassed; it cannot be instantiated.
 			An abstract class can contain abstract methods—methods that are declared but not implemented. Subclasses then provide the implementations for the abstract methods.

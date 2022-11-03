@@ -3,7 +3,7 @@ An ADAPTER Pattern
 says that just "converts the interface of a class into another interface that a client wants".
 In other words, to provide the interface according to client requirement while using the services of a class with a different interface.
 
-The Adapter Pattern is also known as Wrapper.
+The Adapter Pattern is also known as WRAPPER.
 
 
 Advantage of Adapter Pattern
@@ -14,4 +14,15 @@ Usage of Adapter pattern:
 
 1. When an object needs to utilize an existing class with an incompatible interface.
 2. When you want to create a reusable class that cooperates with classes which don't have compatible interfaces.
+
+Implementation: 
+	1. Adapter class (BankCustomer) which implements desired interface (CreditCard) by reusing the methods of Adaptee class (BankDetails)
+	2. How ? : 
+		As the intial statement says
+		"to provide the interface according to client requirement while using the services of a class with a different interface."
+			
+		the class with a different interface is the Adaptee class (which interface it's implementing is not our business)
+	3. So, If the AdapterClass "extends" the adaptee class, then it can use the services, as simple as that and obviously to implement the features of the desired interface, the Adapter class has to "implements" it.
+	
+My words:  Simple Inheritance
 -------------------------------------------------------------------------------------------------------------------------------------------

@@ -22,7 +22,7 @@ public class Singleton {
 	Lazy Inner class instantiation : 
 		1. create a static inner class which has static variable as the object reference.
 		2. Inner class won't be loaded until the method is called.
-	 	3. effificent and thread safe without adding the synchronized block */
+	 	3. efficient and thread safe without adding the synchronized block */
 	
 	// java.lang.runtime is the best example for singleton class 
 	// --since runtime is unique, there should be only single implementation of the class

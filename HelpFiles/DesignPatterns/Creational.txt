@@ -15,7 +15,7 @@ A Factory Pattern or Factory Method Pattern says that just
 
 In other words, subclasses are responsible to create the instance of the class.
 
-The Factory Method Pattern is also known as Virtual Constructor.
+The Factory Method Pattern is also known as VIRTUAL CONSTRUCTOR.
 
 Advantage of Factory Design Pattern :: 
 1. Factory Method Pattern allows the sub-classes to choose the type of objects to create.
@@ -26,6 +26,12 @@ Usage of Factory Design Pattern ::
 1. When a class doesn't know what sub-classes will be required to create
 2. When a class wants that its sub-classes specify the objects to be created.
 3. When the parent classes choose the creation of objects to its sub-classes.
+
+
+Implementation ::
+	1. pre-requisites: An abstract class and its child classes.
+	2. A factory class, which returns the instance of the desired subclass based on the key we pass, but the return type would be of the Abstract class.
+	3. Driver/client : calls the method in factory class by passing a key and doesn't know which child instance is received.
 -------------------------------------------------------------------------------------------------------------------------------------------
 Prototype Pattern says that 
 "cloning of an existing object instead of creating new one and can also be customized as per the requirement".
@@ -64,4 +70,50 @@ Usage of Abstract Factory Pattern ::
 2. When the family of related objects has to be used together, then this constraint needs to be enforced.
 3. When you want to provide a library of objects that does not show implementations and only reveals interfaces.
 4. When the system needs to be configured with one of a multiple family of objects.
+
+
+Implementation ::
+
+	1. pre-requisites : multiple abstract classes(Loan)/ interfaces(Bank) and their sub/impl classes(HDFC, ICICI, SBI   && HomeLoan, BussinessLoan, EducationLoan)
+	2. if there are n abstract classes/Interfaces (here 2--Loan and Bank), then same 'n' no. of factory classes are needed(BankFactory and LoanFactory), which has a method to return the instance of subclass(HDFC) of the respective abstract class(Bank).
+	3. And both BankFactory and LoanFactory extends the abstract class AbstractFactory.
+	4. Now we have this FactoryCreator class which has a method that return the specificFactory class but return type is of AbstractFactory, based on some key.
+	
+	Driver:: same story will be repeated in reverse order.
+		1. call the static method of FactoryCreator by passing some key, which returns the factory class (BankFactory or LoanFactory)
+		2. with the help of above factory class instance, we can call a method(getBank) inside the factory which returns the instance of desired subclass -- HDFC
+		
 -------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -41,22 +41,34 @@ public class StreamSamples {
         //find the first non-repeated character
         String input = "Java Hungry Blog Alive is Awesome";
 
-        Character result = input.chars() // Stream of String       
-                                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object and then to lowercase         
-                                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) //Store the chars in map with count 
+        Character result = input.chars() // IntStream       
+        		// First convert to Character object and then to lowercase       
+                                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) 
+                                .collect(Collectors.groupingBy(
+                                		Function.identity(), 
+                                		LinkedHashMap::new, 
+                                		Collectors.counting()
+                                		)) //Store the chars in map with count 
+             //.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+             // use the uncommented collect method and check differences
                                 .entrySet()
                                 .stream()
                                 .filter(ent -> ent.getValue() == 1L)
                                 .map(entry -> entry.getKey())
                                 .findFirst()
                                 .get();
-        System.out.println(result);
+        System.out.println("first non-repeated character " + result);
         
         
         //find the first repeated character
-        Character res = input.chars() // Stream of String       
-                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object and then to lowercase         
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) //Store the chars in map with count 
+        Character res = input.chars() // IntStream      
+        		// First convert to Character object and then to lowercase         
+                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) 
+                .collect(Collectors.groupingBy(
+                		Function.identity(), 
+                		LinkedHashMap::new, 
+                		Collectors.counting()
+                		)) //Store the chars in map with count 
                 .entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() > 1L)

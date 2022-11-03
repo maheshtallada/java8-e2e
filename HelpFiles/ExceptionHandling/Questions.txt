@@ -7,3 +7,9 @@
 3. NoSuchMethodError ?
 4. CloneNotSupportedException
 5. ConcurrentModificationException
+6. What is the Exception Hierarchy ?
+	Ans : Object -> Throwable ->   Exception 
+										-> RuntimeException
+										-> Other Exceptions
+							  ->   Error
+
