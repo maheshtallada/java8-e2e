@@ -52,9 +52,15 @@
 	
 	Sol: find in package com.learning.java8.java8e2e.newFeatures
 11. What is FailFast and FailSafe ?
+	
+	Fail-Safe: Iterators on Collections from java.util.concurrent package such as ConcurrentHashMap, CopyOnWriteArrayList, etc. are Fail-Safe in nature.
+	Fail-fats: Default iterators for Collections from java.util package such as ArrayList, HashMap, etc. are Fail-Fast.
+	
 12. Reverse a string using default methods and custom code ?
 	Default: StringBuffer sb = new StringBuffer("DesiredString");
 				sb.reverse();
 13. What is the difference between append method of StringBuffer and concat method of String class ?
 14. Will a Java Program gets executed without main method ?
 15. What is the difference between Collection ForEach and Stream ForEach?
+16. What are the child classes of Hashmap? and the hierarchy of classes ?
+17. What is Co-Variant return type ?

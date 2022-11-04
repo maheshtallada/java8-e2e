@@ -1,0 +1,7 @@
+1. What are the differences between StringBuilder and StringBuffer ?
+2. How can we instantiate an object of the class which has private constructor ?
+	-- the clue here is Singleton design pattern
+	-- Ans : -- assign the instance created using new operator to a static variable
+			 -- and return the above static variable in a static method which is public
+3. 
+			

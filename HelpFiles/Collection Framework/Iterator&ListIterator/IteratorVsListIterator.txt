@@ -1,0 +1,5 @@
+An Iterator is an interface in Java and we can traverse the elements of a list in a forward direction whereas a ListIterator is an interface that extends the Iterator interface and we can traverse the elements in both forward and backward directions. 
+
+An Iterator can be used in these collection types like List, Set, and Queue whereas ListIterator can be used in List collection only. 
+
+The important methods of Iterator interface are hasNext(), next() and remove() whereas important methods of ListIterator interface are add(), hasNext(), hasPrevious() and remove(), set()

@@ -1,0 +1,11 @@
+LinkedList: 
+	1. This class is an implementation of the DOUBLY LINKEDLIST data structure which is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. 
+	2. The elements are linked using pointers and addresses. Each element is known as a node. 
+	3. LinkedList also maintains insertion order.
+	4. The LinkedList class implements Queue and Deque interfaces. Therefore, It can also be used as a Queue , Deque or Stack
+	5. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays. It also has a few disadvantages like the nodes cannot be accessed directly instead we need to start from the head and follow through the link to reach a node we wish to access.
+	
+	
+Constructors :
+	Except the one for ArrayList where we specify the initial capacity, remaining two are applicable for LinkedList.
+	

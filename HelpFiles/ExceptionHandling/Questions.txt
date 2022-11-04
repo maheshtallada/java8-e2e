@@ -4,14 +4,18 @@
 2. How can we decide that custom exception should be checked or unchecked in java?
 	If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
 	If you want to write a runtime exception, you need to extend the RuntimeException class.
-3. NoSuchMethodError ?
-4. CloneNotSupportedException
-5. ConcurrentModificationException
-6. What is the Exception Hierarchy ?
+
+3. What is the Exception Hierarchy ?
 	Ans : Object -> Throwable ->   Exception 
 										-> RuntimeException
 										-> Other Exceptions
 							  ->   Error
 
-7. When we use multi catch block with Exception as the first one is valid or not ? (any compile time exception ?)
-8. Why the "Exception" block catches all the other Exceptions?
+4. When we use multi catch block with Exception as the first one is valid or not ? (any compile time exception ?)
+5. Why the "Exception" block catches all the other Exceptions?
+6. List of Exceptions :: 
+	NoSuchMethodError
+	CloneNotSupportedException
+	ConcurrentModificationException
+	UnsupportedOperationException
+7. 

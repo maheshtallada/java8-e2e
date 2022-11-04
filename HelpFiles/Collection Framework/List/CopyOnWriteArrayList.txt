@@ -1,0 +1,18 @@
+1. CopyOnWriteArrayList class implements the List interface. 
+2. It is an enhanced version of ArrayList in which all modifications (add, set, remove, etc) are implemented by making a fresh copy. It is found in java.util.concurrent package. 
+3. It is a data structure created to be used in a concurrent environment.
+
+
+Here are few points about CopyOnWriteArrayList: 
+
+	1. As the name indicates, CopyOnWriteArrayList creates a Cloned copy of underlying ArrayList, for every update operation at a certain point both will be synchronized automatically, which is taken care of by JVM. Therefore, there is no effect for threads that are performing read operation.
+	2. It is costly to use because for every update operation a cloned copy will be created. Hence, CopyOnWriteArrayList is the best choice if our frequent operation is read operation.
+	3. The underlined data structure is a GROW-ABLE ARRAY.
+	4. It is a THREAD-SAFE version of ArrayList.
+	5. Insertion is preserved, duplicates, null, and heterogeneous Objects are allowed.
+	6. 
+		1. The main important point about CopyOnWriteArrayList is the Iterator of CopyOnWriteArrayList CANNOT perform remove operation otherwise we get Run-time exception saying UnsupportedOperationException. 
+		2. add() and set() methods on CopyOnWriteArrayList iterator also throws UnsupportedOperationException. Also Iterator of CopyOnWriteArrayList will never throw ConcurrentModificationException.
+		3. So we can have a question, when it throws error while using add and set, how can we perform those operations with this class ?
+			-- Ans:  It says if we use those methods on Iterator of this class, then we'll get this exception. We can still use these methods on the instance directly.
+			-- ref: https://stackoverflow.com/questions/52467653/unsupportedoperationexception-while-iterating-over-copyonwritearraylist

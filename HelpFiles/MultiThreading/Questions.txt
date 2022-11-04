@@ -58,3 +58,5 @@ What is Synchronization ?
 8. What is ExecutorService ?
 9. What is CompletableFuture ?
 10. What is Callable Interface? 
+11. Why we have runnable way and thread, why not just a single way of implementing ?
+12. If one of 5 threads is down, how do we identify.

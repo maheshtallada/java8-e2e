@@ -1,0 +1,78 @@
+ArrayList ::	
+	ArrayList maintains insertion order.
+	ArrayList is a resizable array implementation in java. 
+	ArrayList grows dynamically and ensures that there is always a space to add elements. 
+	The backing data structure of ArrayList is AN ARRAY OF OBJECT CLASS ELEMENTS. (Object[])
+	ArrayList class in Java has 3 constructors. 
+	It has its own version of readObject and writeObject methods. 
+	Object Array in ArrayList is transient. 
+	It implements RandomAccess, Cloneable, and java.io.Serializable (which are Marker Interface in Java)
+	Capactiy	: How many elements it can store.
+	Size		: How many elements are currently available.
+	Load Factor: 0.75 
+		-- defines when to increase the capacity.
+		-- if the size reaches capacity*load factor-- then the size increases.
+	newCapacity = oldCapacity + 50%  (Calculation is different though, but comes as 50%)
+	
+Initialization ::
+
+	List<String> arrayList = new ArrayList<>();
+	while declaring ArrayList below code is executed as the default constructor of the ArrayList class is invoked.
+
+In Java 7
+
+	public ArrayList() {
+		 this(10);
+	}
+	Hereby default capacity of the  Array size is 10.
+	
+In Java 8 --- initial 0, when first element added- it becomes 10.
+
+	Note: 
+		Here, the List is initialized with a default capacity of 10. 
+		Array List with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA will be expanded to DEFAULT_CAPACITY when the first element is inserted into the Array list ( Adding 1st element to ArrayList).
+------------------------------------------------------------------------------------------------------------------------------------------------
+	private static final int DEFAULT_CAPACITY = 10;\\ Default initial capacity.
+	  
+			// Shared empty array instance used for empty instances.
+	private static final Object[] EMPTY_ELEMENTDATA = {};
+
+		  /**
+		   * Shared empty array instance used for default sized empty instances. We
+		   * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
+		   * first element is added.
+		   */
+	   
+	private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+	
+	public ArrayList() {
+		this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+	}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Constructors:
+ ArrayList contains 3 types of constructors in Java 8  
+
+	ArrayList(): This constructor is to initialize an empty List.
+	ArrayList(int capacity): In this constructor, we can pass capacity as a parameter, used to initialize the capacity by the user.
+	ArrayList(Collection c): In this constructor, we can pass a Collection c as a parameter, In which an Array list will contain the elements of Collection c.
+------------------------------------------------------------------------------------------------------------------------------------------------
+Best practices in creating ArrayList ::
+
+	***To initialize the ArrayList with approx expected capactity***
+	
+Whenever we create an ArrayList and it reaches its threshold, Internally creates a new ArrayList object with a new capacity and copies all old elements from the old ArrayList to a new object. This process will take more space and time even it provides flexibility to do.
+
+Threshold
+
+Threshold = (Current Capacity) * (Load Factor)
+The load factor is the measure that decides when to increase the capacity of the ArrayList. The default load factor of an ArrayList is 0.75f.  For example, current capacity is 10. So, loadfactor = 10*0.75=7 while adding the 7th element array size will increase.  So, It would be good practice if we choose the initial capacity, by keeping the number of expected elements in mind as approx.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Method to calculate the increased capacity: 50% only, in both java7 and java8, but the calculation is different.
+
+	The new capacity is calculated which is 50% more than the old capacity and the array is increased by that capacity.
+
+Java8 : int newCapacity = oldCapacity + (oldCapacity >> 1);   // uses right shift operator
+Java7 : int newCapacity = (oldCapacity * 3)/2 + 1;
+------------------------------------------------------------------------------------------------------------------------------------------------

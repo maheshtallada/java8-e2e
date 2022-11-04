@@ -7,7 +7,7 @@
 	HashMap iterator is fail-safe where HashTable iterator is not fail-safe.
 	HashMap extends AbstractMap class where HashTable extends Dictionary class.
 3. Apart from equals and hashcode contract and creating a unique hashcode for objects, what is the other contract we can implement to avoid data inconsistency ?
-	Something like immutable classes and making map object not to modify its key.
+	We have to make sure the key of HashMap is of type Immutable class.
 4. How to make a class immutable.
 	Declare the class as final so it can’t be extended.
 	Make all fields private so that direct access is not allowed.
@@ -19,6 +19,14 @@
 5. What are the uses of immutable classes ?
 	An immutable class is good for caching purposes because you don’t have to worry about the value changes. 
 	Another benefit of immutable class is that it is inherently thread-safe, so you don’t have to worry about thread safety in case of multi-threaded environment.
-6. What is the output of the problem (sysout stmnt) in HashMapExample.java ? -- null
+6. What is the output of the problem (sysout stmnt) in Map (folder) -> HashMapExample.java ? -- null
 7. What is the Difference Between Collection.stream().forEach() and Collection.forEach()	??
 	https://www.baeldung.com/java-collection-stream-foreach
+8. Is ArrayList thread-safe ?
+	1. We know that by default ArrayList class is not a thread-safe or non-synchronized. That means the multiple threads can access the same ArrayList object or instance simultaneously. Therefore, it cannot be used in the multi-threading environment without explicit synchronization.
+	
+	2. Use CopyOnWriteArrayList class. This is the thread safe version of ArrayList
+9. When we can add elements to a list using listIterator, why do we need CopyonWriteArrayList ?
+	CopyonWriteArrayList is to be used in Concurrent environment, i.e., Multi-Threaded environment.
+	
+	Concurrency vs Multi-threading :: Concurrency is the ability of your program to deal (not doing) with many things at once and is achieved through multithreading
