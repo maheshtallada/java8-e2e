@@ -18,4 +18,30 @@
 	CloneNotSupportedException
 	ConcurrentModificationException
 	UnsupportedOperationException
-7. 
+7. What are the exceptions we get in Hibernate?
+	https://www.baeldung.com/hibernate-exceptions#:~:text=Hibernate%20Exception%20Overview&text=These%20can%20be%20mapping%20errors,exceptions%20mostly%20extend%20from%20HibernateException.
+	
+	These exceptions mostly extend from HibernateException. However, if we're using Hibernate as a JPA persistence provider, these exceptions may get wrapped into PersistenceException
+	
+	1. MappingException -- parent
+		childs: 
+			AnnotationException – a problem with an annotation
+			DuplicateMappingException – duplicate mapping for a class, table, or property name
+			InvalidMappingException – mapping is invalid
+			MappingNotFoundException – mapping resource could not be found
+			PropertyNotFoundException – an expected getter or setter method could not be found on a class
+	2. AnnotationException
+	3. QuerySyntaxException
+	4. SchemaManagementException
+	5. CommandAcceptanceException
+	6. Others: 
+		ConstraintViolationException
+		DataException
+		JDBCConnectionException
+		LockAcquisitionException
+		PessimisticLockException
+		QueryTimeoutException
+		SQLGrammarException
+		GenericJDBCException
+-------------------------------------------------------------------------------------------------------------------
+8. 

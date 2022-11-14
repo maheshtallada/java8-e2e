@@ -63,7 +63,7 @@ FROM (
 ) E
 WHERE E.RowNumber % 2 = 1;  // use %2=0 for even rows
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Write an SQL query to find the nth highest salary from table.
+Write an SQL query to find the highest salary from table.
 
 SELECT TOP 1 Salary
 FROM (
